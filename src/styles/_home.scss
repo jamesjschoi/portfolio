@@ -1,0 +1,45 @@
+.wrapper {    
+    overflow: hidden;
+    .homepage {
+        margin: em(60) em(20);
+
+        .home-sections {
+            width: 100%;
+            position: relative;
+        
+            .intro {
+                width: em(1200); 
+                max-width: calc(100% - em(40));
+                margin: 0 auto;
+                
+                
+            }
+
+            .about {
+                width: em(900);
+                max-width: calc(100% - em(20));
+                margin: 0 auto;
+                padding: 0 em(10);
+
+            }
+
+            .works {
+                width: em(900);
+                max-width: calc(100% - em(20));
+                margin: 0 auto;
+                padding: 0 em(10);
+
+                
+            }
+
+            .contact {
+                width: em(900);
+                max-width: calc(100% - em(20));
+                margin: 0 auto;
+                padding: 0 em(10);
+                height: 60vh;
+                padding-top: em(55);
+            }
+        }
+    }
+}

@@ -1,0 +1,271 @@
+@import url("https://use.fontawesome.com/releases/v5.13.0/css/all.css");
+
+.project {
+  width: em(900);
+  max-width: calc(100% - em(20));
+  margin: 0 auto;
+  padding: em(60) em(10);
+  .project-wrapper {
+    .project-image {
+      img {
+        width: 100%;
+      }
+    }
+
+    .project-title {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: em(20) 0;
+      h2 {
+        font-size: em(40);
+        background: linear-gradient(120deg, $main-color 0%, $main-color 100%);
+        background-repeat: no-repeat;
+        background-size: 100% 40%;
+        background-position: 0 90%;
+      }
+    }
+
+    .first {
+      display: flex;
+      flex-direction: column;
+
+      @include mq($tablet) {
+        flex-direction: row;
+      }
+      .spec {
+        flex: 0.5;
+        padding-bottom: em(20);
+        p {
+          line-height: em(30);
+        }
+
+        h3 {
+          border-left: solid $text-color em(5);
+          padding-left: em(10);
+        }
+
+        .links {
+          display: flex;
+
+          @include mqs($desktop) {
+            justify-content: center;
+            align-items: center;
+          }
+
+          a {
+            display: block;
+            text-align: center;
+            width: em(100);
+            border: 2px solid $text-color;
+            padding: em(5);
+            background-color: $background-color;
+            color: $text-color;
+            margin: em(10) em(10) 0 0;
+            transition: 0.4s ease-in-out;
+            &:hover {
+              background-color: $text-color;
+              color: $background-color;
+            }
+          }
+        }
+      }
+
+      .overview {
+        flex: 0.5;
+        h3 {
+          border-left: solid $text-color em(5);
+          padding-left: em(10);
+        }
+      }
+    }
+
+    .features {
+      .features-title {
+        margin: em(20) 0;
+
+        h3 {
+          padding-left: em(10);
+          border-left: solid $text-color em(5);
+        }
+      }
+
+      .features-wrapper {
+        display: flex;
+        flex-direction: column;
+
+        .features-left {
+          flex: 0.5;
+
+          .code {
+            font-size: em(10);
+
+            @include mq($desktop) {
+              font-size: em(13);
+            }
+
+            pre {
+              word-wrap: break-word;
+              overflow-wrap: break-word;
+              padding: em(10);
+              code {
+                white-space: pre-wrap;
+              }
+            }
+          }
+        }
+        .features-right {
+          flex: 0.5;
+
+          p {
+            margin: em(20) 0;
+          }
+        }
+      }
+    }
+
+    .colors {
+      h3 {
+        border-left: solid $text-color em(5);
+        padding-left: em(10);
+      }
+      .color-palette {
+        background-color: $div-box;
+        border-radius: em(10);
+        width: 80%;
+        margin: em(20) auto;
+        box-shadow: $shadow-color 0px 5px 15px;
+
+        h4 {
+          text-align: center;
+          padding: em(20) 0;
+          color: $text-color;
+        }
+
+        .color-palette-wrapper {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+
+          .color-sample {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+
+            .color {
+              width: em(100);
+              height: em(100);
+              border-radius: 50%;
+              margin: em(10) em(20);
+            }
+
+            #white {
+              background-color: $white;
+            }
+
+            #black {
+              background-color: $black;
+            }
+
+            #light-green {
+              background-color: #54deac;
+            }
+
+            #orange {
+              background-color: #d49621;
+            }
+
+            #musky-green {
+              background-color: #81b29a;
+            }
+
+            #atlantic {
+              background-color: #155370;
+            }
+
+            #burnt-sienna {
+              background-color: #e07a5f;
+            }
+
+            #naples-yellow {
+              background-color: #f2cc8f;
+            }
+
+            #blue {
+              background-color: #4a83b7;
+            }
+
+            #darkblue {
+              background-color: #1352a2;
+            }
+
+            p {
+              text-align: center;
+              margin-bottom: em(20);
+            }
+          }
+        }
+      }
+    }
+
+    .takeaway {
+      h3 {
+        border-left: solid $text-color em(5);
+        padding-left: em(10);
+      }
+      .takeaway-wrapper {
+        margin-top: em(20);
+      }
+    }
+    .cta {
+      margin-top: em(50);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .cta-button {
+        display: block;
+        text-align: center;
+        width: em(140);
+        padding: em(10) 0;
+        border: 2px solid $text-color;
+        cursor: pointer;
+        background-color: $background-color;
+        color: $text-color;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        &:before {
+          content: "\f35a";
+          font-family: "Font Awesome 5 Free";
+          color: $background-color;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          text-align: center;
+          font-size: em(30);
+          transform: scale(0, 1);
+          transition: all 0.2s linear 0s;
+        }
+
+        &:hover {
+          text-indent: -9999px;
+          color: $background-color;
+          background-color: $text-color;
+          &:before {
+            transform: scale(1, 1);
+            text-indent: 0;
+          }
+        }
+      }
+    }
+  }
+}

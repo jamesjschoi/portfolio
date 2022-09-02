@@ -1,0 +1,87 @@
+.nav-mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $black;
+    height: em(80);
+    position: fixed;
+    transform: translateX(-50%);
+    left: 50%;
+    bottom: 0;
+    width: 100%;
+    z-index: 2;
+    
+
+    @include mq($navMobile) {
+        display: none;
+    }
+
+    ul {
+        display: flex;
+        width: 100%;
+        flex: 1;
+        justify-content: space-evenly;
+        padding-left: 0;
+        
+
+        li {
+            position: relative;
+            list-style: none;
+            width: em(50);
+            height: em(50);
+            z-index: 1;
+            margin-left: em(0);
+
+            &.active::before {
+                content: "";
+                position: absolute;
+                top: em(-35);
+                width: em(50);
+                height: em(50);
+                background-color: $mainColor;
+                border-radius: 50%;
+                border: em(6) solid $white;
+            }
+
+            &.active a .nav-icon {
+                transform: translateY(em(-28));
+            }
+
+            &.active a .nav-text {
+                opacity: 1;
+                transform: translateY(em(15));
+            }
+
+            a {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+                line-height: em(75);
+
+                .nav-icon svg {
+                    position: relative;
+                    display: block;
+                    font-size: em(30);
+                    text-align: center;
+                    transition: 0.5s ease-in-out;
+                    color: $white;
+                }
+
+                .nav-text {
+                    position: absolute;
+                    font-size: em(15);
+                    letter-spacing: em(2);
+                    transition: 0.5s;
+                    opacity: 0;
+                    transform: translateY(em(20));
+                    color: $white;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}

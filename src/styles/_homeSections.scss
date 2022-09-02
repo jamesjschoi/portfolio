@@ -1,0 +1,664 @@
+//Intro
+.intro {
+  .intro-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    @include mq($desktop) {
+      padding: 0 em(50);
+    }
+    .heading-wrapper {
+      display: grid;
+      place-content: center;
+      .intro-text {
+        padding-top: em(10);
+        font-weight: 800;
+        font-size: $font-size-h1;
+        // flex: 0.8;
+
+        // @include mqs($navMobile) {
+        //   flex: 0.5;
+        // }
+
+        @include mq($tablet) {
+          padding-top: em(10);
+        }
+
+        @include mq($desktop) {
+          padding-top: em(5);
+          padding-left: em(10);
+        }
+
+        .highlight {
+          background: linear-gradient(120deg, $main-color 0%, $main-color 100%);
+          background-repeat: no-repeat;
+          background-size: 100% 35%;
+          background-position: 0 90%;
+        }
+      }
+      .intro-text-two {
+        font-size: $font-size-h2;
+        margin-top: em(10);
+
+        @include mq($tablet) {
+        }
+
+        @include mq($desktop) {
+          padding-left: em(22);
+        }
+
+        .typewriter {
+          display: inline-block;
+          width: em(180);
+
+          .underline {
+            background: linear-gradient(
+              120deg,
+              $main-color 0%,
+              $main-color 100%
+            );
+            background-repeat: no-repeat;
+            background-size: 100% 35%;
+            background-position: 0 90%;
+          }
+        }
+      }
+      .intro-btn-container {
+        display: flex;
+        justify-content: start;
+        flex-direction: column;
+        margin-top: em(30);
+
+        @include mq($desktop) {
+          margin-top: em(50);
+          justify-content: start;
+          margin-left: em(50);
+        }
+
+        .intro-text-heading {
+          @include mq($tablet) {
+            margin-bottom: em(20);
+          }
+          h2 {
+            font-size: $font-size-h2;
+          }
+        }
+        .intro-btn-wrapper {
+          display: flex;
+          justify-content: start;
+          a {
+            display: block;
+            text-align: center;
+            width: em(140);
+            padding: em(10) 0;
+            background-color: $background-color;
+            color: $text-color;
+            border: 2px solid $text-color;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            position: relative;
+
+            &:first-child {
+              margin-right: em(10);
+            }
+
+            &:hover {
+              background-color: $text-color;
+              color: $background-color;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .scroll-arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    flex: 0.2;
+    margin: em(50) 0;
+
+    @include mqs($navMobile) {
+      flex: 0.5;
+    }
+
+    .arrow {
+      svg {
+        color: $main-color;
+        font-size: em(40);
+        @include animation(
+          'occasional-arrow-bounce 3s infinite 2s alternate ease-out'
+        );
+
+        &:hover {
+          @include animation('arrow-bounce 0.5s infinite alternate ease-out');
+        }
+      }
+    }
+  }
+}
+
+@include keyframes(occasional-arrow-bounce) {
+  0% {
+    transform: translateY(0);
+  }
+
+  79% {
+    transform: translateY(0);
+  }
+
+  80% {
+    transform: translateY(em(2));
+  }
+
+  100% {
+    transform: translateY(em(-4));
+  }
+}
+
+@include keyframes(arrow-bounce) {
+  0% {
+    transform: translateY(em(0));
+  }
+
+  50% {
+    transform: translateY(em(2));
+  }
+
+  100% {
+    transform: translateY(em(-4));
+  }
+}
+
+//About
+.about {
+  width: 100%;
+  padding: 0 em(20);
+
+  .about-wrapper {
+    .about-image {
+      display: grid;
+      place-content: center;
+      margin-bottom: em(20);
+
+      .about-image-wrapper {
+        width: em(120);
+        height: em(120);
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 50%;
+          box-shadow: $shadow-color 0px 5px 15px;
+          border: 2px solid $text-color;
+        }
+      }
+    }
+
+    & .about-title #about-title {
+      text-align: center;
+      padding-bottom: em(10);
+      font-size: em(25);
+
+      @include mq($desktop) {
+        font-size: em(30);
+      }
+
+      @include mq($desktopMid) {
+        font-size: em(40);
+      }
+    }
+
+    .about-info-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+
+      @include mq($desktopMid) {
+        margin-left: em(80);
+      }
+
+      .about-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+
+        @include mq($tablet) {
+          flex-flow: row wrap;
+        }
+
+        & .info-wrapper:nth-child(3) .info-card .about-icon {
+          font-size: em(25);
+        }
+
+        & .info-wrapper:nth-child(4) .info-card .about-icon {
+          font-size: em(28);
+        }
+
+        .info-wrapper {
+          @include mq($tablet) {
+            width: 50%;
+          }
+
+          @include mq($desktopMid) {
+            width: 33%;
+          }
+
+          .info-card {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+
+            @include mq($desktopMid) {
+              justify-content: start;
+            }
+
+            .about-icon {
+              font-size: em(30);
+              margin: 0 em(15) em(10) 0;
+
+              @include mq($desktopMid) {
+                margin: 0 em(15) em(20) 0;
+              }
+            }
+
+            .basic-info {
+              width: em(200);
+
+              .info-title {
+                font-weight: 800;
+              }
+
+              .info-info {
+                color: $text-color;
+              }
+            }
+          }
+        }
+      }
+    }
+    .about-info-detail {
+      .about-detail-text {
+        text-align: center;
+        padding: 0 em(20);
+
+        .decoration {
+          text-decoration: $main-color underline wavy;
+        }
+      }
+      .stacks {
+        font-size: em(40);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: em(10);
+        svg:not(:last-child) {
+          margin-right: em(10);
+        }
+      }
+    }
+
+    .info-cta {
+      margin-top: em(30);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .cta-button {
+        display: block;
+        text-align: center;
+        width: em(140);
+        padding: em(10) 0;
+        background-color: $background-color;
+        color: $text-color;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        border: 2px solid $text-color;
+        cursor: pointer;
+
+        &:before {
+          content: '\f35a';
+          font-family: 'Font Awesome 5 Free';
+          color: $background-color;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          text-align: center;
+          font-size: em(30);
+          transform: scale(0, 1);
+          transition: all 0.2s linear 0s;
+        }
+
+        &:hover {
+          text-indent: -9999px;
+          color: $background-color;
+          background-color: $text-color;
+
+          &:before {
+            transform: scale(1, 1);
+            text-indent: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+//Works
+.works {
+  .works-title {
+    text-align: center;
+    padding: em(20) 0;
+    font-size: em(25);
+
+    @include mq($desktop) {
+      font-size: em(30);
+    }
+
+    @include mq($desktopMid) {
+      font-size: em(40);
+    }
+  }
+
+  .works-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .work-item {
+      width: em(330);
+
+      @include mq($tablet) {
+        width: em(1000);
+      }
+
+      &:not(:last-child) {
+        margin-bottom: em(50);
+      }
+
+      .work-item-wrapper {
+        background-color: $div-box;
+        border-radius: em(10);
+        margin: 0 em(10);
+        padding: em(30) em(20);
+        display: flex;
+        height: em(500);
+        flex-direction: column;
+        box-shadow: $shadow-color 0px 5px 15px;
+
+        @include mq($tablet) {
+          padding: em(30) em(50);
+        }
+
+        @include mq($desktop) {
+          flex-direction: row;
+          margin: 0 em(40);
+          height: em(400);
+        }
+
+        .work {
+          flex: 0.7;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          @include mq($desktopMid) {
+            flex: 0.6;
+          }
+
+          .work-image-container {
+            width: em(200);
+            height: em(200);
+            position: relative;
+
+            @include mq($tablet) {
+              width: em(300);
+            }
+
+            @include mq($desktopMid) {
+              width: em(400);
+            }
+
+            .img1 {
+              width: em(250);
+              position: absolute;
+
+              @include mq($tablet) {
+                width: em(350);
+              }
+
+              @include mq($desktopMid) {
+                left: 0;
+                top: em(-50);
+              }
+            }
+
+            img:nth-child(2) {
+              position: absolute;
+              width: em(50);
+              bottom: em(30);
+              left: em(-40);
+
+              @include mq($tablet) {
+                width: em(70);
+                bottom: em(-50);
+              }
+
+              @include mq($desktopMid) {
+                width: em(80);
+                left: em(-20);
+              }
+            }
+
+            img:nth-child(3) {
+              position: absolute;
+              width: em(100);
+              left: em(140);
+              bottom: em(30);
+              background-color: transparent;
+
+              @include mq($tablet) {
+                width: em(140);
+                left: em(240);
+                bottom: em(-50);
+              }
+            }
+          }
+        }
+
+        .work-info {
+          flex: 0.3;
+
+          @include mq($desktop) {
+            padding-left: em(30);
+          }
+
+          @include mq($desktopMid) {
+            flex: 0.4;
+          }
+
+          .work-info-title {
+            display: flex;
+            justify-content: center;
+
+            @include mq($desktopMid) {
+              justify-content: start;
+            }
+
+            h3 {
+              font-size: em(25);
+              margin: em(20) 0;
+              font-weight: 900;
+
+              background: linear-gradient(
+                120deg,
+                $main-color 0%,
+                $main-color 100%
+              );
+              background-repeat: no-repeat;
+              background-size: 100% 40%;
+              background-position: 0 90%;
+
+              @include mq($tablet) {
+                font-size: em(30);
+                margin-top: em(25);
+              }
+
+              @include mq($desktopMid) {
+                font-size: em(40);
+                margin: 0 0 em(30) 0;
+              }
+            }
+          }
+
+          p {
+            margin-left: em(15);
+            text-align: center;
+
+            @include mq($desktopMid) {
+              text-align: left;
+              margin-left: 0;
+            }
+          }
+
+          .work-tags {
+            font-size: em(12);
+            color: rgba(128, 128, 128, 0.68);
+            margin-top: em(10);
+          }
+
+          .work-buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: em(20);
+
+            @include mq($desktopMid) {
+              justify-content: start;
+            }
+
+            a {
+              display: block;
+              text-align: center;
+              width: em(140);
+              padding: em(10) 0;
+              background-color: $background-color;
+              color: $text-color;
+              border: 2px solid $text-color;
+              cursor: pointer;
+              transition: all 0.4s ease;
+              position: relative;
+
+              &:nth-child(1) {
+                margin-right: em(20);
+              }
+
+              &:hover {
+                background-color: $text-color;
+                color: $background-color;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//Contact
+.contact {
+  margin: 0 em(30);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .contact-wrapper {
+    text-align: center;
+
+    .contact-title {
+      h2 {
+        font-size: em(25);
+
+        @include mq($desktop) {
+          font-size: em(30);
+        }
+
+        @include mq($desktopMid) {
+          font-size: em(40);
+        }
+      }
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: center;
+      align-items: center;
+
+      a {
+        color: $text-color;
+        font-size: em(20);
+        border: em(2) solid $text-color;
+        line-height: em(40);
+        width: 50%;
+
+        &:hover {
+          color: $background-color;
+          background-color: $text-color;
+          transition: all 0.4s ease;
+        }
+
+        &:hover + p {
+          @include animation('bounce 0.5s 0.11s');
+        }
+      }
+
+      p {
+        line-height: em(60);
+
+        @include mq($tablet) {
+          font-size: em(20);
+        }
+      }
+    }
+  }
+}
+
+@include keyframes(bounce) {
+  0%,
+  100% {
+    transform: translate(0);
+  }
+
+  30% {
+    transform: translateY(em(-5));
+  }
+
+  50% {
+    transform: translateY(0);
+  }
+
+  70% {
+    transform: translateY(em(-3));
+  }
+
+  80% {
+    transform: translateY(0);
+  }
+
+  90% {
+    transform: translateY(em(-1));
+  }
+}

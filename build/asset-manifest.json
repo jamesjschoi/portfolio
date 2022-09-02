@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.106c56c1.css",
+    "main.js": "/static/js/main.cb13372b.js",
+    "static/media/dropdown.png": "/static/media/dropdown.aaccde9df396b2ff66d3.png",
+    "static/media/multidevice-honey.png": "/static/media/multidevice-honey.4e43ed4c9b2b973a2dc8.png",
+    "static/media/profile-picture.jpeg": "/static/media/profile-picture.4ab0243933d24fdd2c03.jpeg",
+    "static/media/honey-desktop.png": "/static/media/honey-desktop.e3a7bb1b863326bbe617.png",
+    "static/media/movie-galaxy-desktop.png": "/static/media/movie-galaxy-desktop.6215317e33d33d7f1e2b.png",
+    "static/media/multidevice-portfolio.png": "/static/media/multidevice-portfolio.194d08db40fe19cfd65c.png",
+    "static/media/movie-galaxy-tablet.png": "/static/media/movie-galaxy-tablet.c075c6e0959e95b22efb.png",
+    "static/media/honey-tablet.png": "/static/media/honey-tablet.91268c70f35755535064.png",
+    "static/media/multidevice-movie.png": "/static/media/multidevice-movie.48c962d7d31615dd3808.png",
+    "static/media/multidevice-weatherapp.png": "/static/media/multidevice-weatherapp.e98ce8a44e37e393a104.png",
+    "static/media/honey-mobile.png": "/static/media/honey-mobile.00cc4bfa40fcc211e070.png",
+    "static/media/movie-galaxy-mobile.png": "/static/media/movie-galaxy-mobile.0283fb0c538625b4e152.png",
+    "index.html": "/index.html",
+    "main.106c56c1.css.map": "/static/css/main.106c56c1.css.map",
+    "main.cb13372b.js.map": "/static/js/main.cb13372b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.106c56c1.css",
+    "static/js/main.cb13372b.js"
+  ]
+}

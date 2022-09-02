@@ -1,0 +1,71 @@
+//Variables
+
+//Colors
+$black: #000000;
+$dark: #121212;
+$lightdark: #1e1e1e;
+$white: #ffffff;
+$lightwhite: #f0f0f1;
+$mainColor: #4a83b7;
+// $mainColor: #e4a0a1;
+$mainDarkColor: #a32cc4;
+// $mainDarkColor: #ff8587;
+$subColor: #ffd364;
+// $subColor: #d8de87;
+$shadeColor: rgba(0, 0, 0, 0.35);
+$shadeOppColor: rgba(255, 255, 255, 0.35);
+$shadowColorTwo: rgba(0, 0, 0, 0.18);
+$shadowOppColorTwo: rgba(255, 255, 255, 0.18);
+$shadowColorThree: rgba(0, 0, 0, 0.1);
+$shadowOppColorThree: rgba(255, 255, 255, 0.1);
+$shadowColorFour: rgba(0, 0, 0, 0.15);
+$shadowOppColorFour: rgba(0, 0, 0, 0.15);
+$shadowColorFive: rgba(0, 0, 0, 0.65);
+$shadowOppColorFive: rgba(255, 255, 255, 0.65);
+$background-color: var(--background-color);
+$text-color: var(--text-color);
+$div-box: var(--div-box);
+$main-color: var(--main-color);
+$shadow-color: var(--shadow-color);
+$shadow-color-two: var(--shadow-color-two);
+$shadow-color-three: var(--shadow-color-three);
+$shadow-color-four: var(--shadow-color-four);
+$shadow-color-five: var(--shadow-color-five);
+
+body.light {
+  --background-color: #{$white};
+  --text-color: #{$black};
+  --div-box: #{$lightwhite};
+  --dark-color: #{$black};
+  --main-color: #{$mainColor};
+  --shadow-color: #{$shadeColor};
+  --shadow-color-two: #{$shadowColorTwo};
+  --shadow-color-three: #{$shadowColorThree};
+  --shadow-color-four: #{$shadowColorFour};
+  --shadow-color-five: #{$shadowColorFive};
+}
+
+body.dark {
+  --background-color: #{$dark};
+  --text-color: #{$white};
+  --div-box: #{$lightdark};
+  --dark-color: #{$black};
+  --main-color: #{$mainDarkColor};
+  --shadow-color: #{$shadeOppColor};
+  --shadow-color-two: #{$shadowOppColorTwo};
+  --shadow-color-three: #{$shadowOppColorThree};
+  --shadow-color-four: #{$shadowOppColorFour};
+  --shadow-color-five: #{$shadowOppColorFive};
+}
+
+// Breakpoints
+$navMobile: 405;
+$tablet: 540;
+$desktop: 820;
+$desktopMid: 1000;
+$desktopWide: 1300;
+$desktopUltra: 2000;
+
+// Fluid Type Scale
+$font-size-h1: clamp(35px, 4.88vw + 15.51px, 79px);
+$font-size-h2: clamp(1.13rem, 2.5vw + 0.5rem, 2.5rem);

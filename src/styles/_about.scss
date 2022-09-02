@@ -1,0 +1,77 @@
+// Page About
+.page-about {
+  padding-top: em(60);
+  .page-about-wrapper {
+    width: em(900);
+    max-width: calc(100% - em(20));
+    margin: 0 auto;
+    padding: 0 em(10);
+
+    .page-about-intro {
+      width: 100%;
+      padding-bottom: em(20);
+
+      h2 {
+        span {
+          text-decoration: $main-color underline wavy;
+          text-underline-offset: em(2);
+        }
+      }
+
+      .ul {
+        list-style: none;
+        padding-left: 0;
+        display: flex;
+        padding-bottom: em(20);
+
+        .first-li {
+          margin-right: em(6);
+          color: $text-color;
+        }
+        .second-li {
+          color: $main-color;
+          svg {
+            margin-right: em(6);
+            color: $text-color;
+          }
+        }
+      }
+    }
+    .page-about-skills {
+      h2 {
+        padding: em(20) 0;
+      }
+
+      p {
+        padding-bottom: em(20);
+      }
+
+      .skills-wrapper {
+        ul {
+          list-style: none;
+          padding-left: 0;
+          li {
+            padding-bottom: em(15);
+            @include mq($tablet) {
+              width: 33.333%;
+              display: inline-flex;
+              align-items: center;
+            }
+          }
+
+          span {
+            padding-left: em(10);
+          }
+
+          .type {
+            color: $main-color;
+          }
+
+          svg {
+            font-size: em(40);
+          }
+        }
+      }
+    }
+  }
+}

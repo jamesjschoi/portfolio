@@ -1,0 +1,25 @@
+// Mixins
+
+// Media Queries
+@mixin mq($w){
+    @media(min-width: em($w)){
+        @content;
+    }
+}
+
+@mixin mqs($w){
+    @media(max-width: em($w)){
+        @content;
+    }
+}
+
+//Keyframes
+@mixin keyframes($animation-name) {
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+@mixin animation($str) {
+    animation: #{$str};
+}

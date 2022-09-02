@@ -1,0 +1,157 @@
+.header {
+    width: 100%;
+    height: em(60);
+    z-index: 3;
+    position: fixed;
+    top: 0;
+    
+    @include mqs($navMobile) {
+        background-color: $background-color;
+        border-bottom: 2px solid $div-box;
+    }
+
+    .header-wrapper {
+        padding: em(5) em(5);
+        
+
+        @include mq($navMobile) {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0 em(40);
+        }
+
+        @include mq($desktop) {
+            margin: 0 em(130);
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            
+            img {
+                width: em(50);
+                height: em(50);
+                margin-left: em(10);
+            }
+            #darkmode {
+                width: em(30);
+                height: em(28);                
+                margin-right: em(10);
+                margin-bottom: em(8);
+                filter: drop-shadow(3px 5px 2px rgba(139, 167, 12, 0.769));
+                transition: all 0.4s ease-in-out;
+    
+                &:hover,
+                &:focus {
+                    cursor: pointer;
+                    path {
+                        fill: #e4e411;
+                    }
+                }
+    
+                path {
+                    fill: $subColor;
+                }
+                @include mq($navMobile) {
+                    display: none;
+                }
+            }
+            a {
+                text-decoration: none;
+                color: black;
+            }
+
+        }
+        .header-right {
+
+            .toggle-nav {
+                display: none;
+
+                @include mq(405) {
+                    display: block;
+                    background-color: $main-color;
+                    height: em(50);
+                    width: em(50);
+                    border-radius: em(10);
+                    position: relative;
+                    cursor: pointer;       
+                }
+        
+                .hamburger {
+                    position: relative;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate3d(-50%, -50%, 0);
+                    float: left;
+                    border: 0px solid transparent;
+
+                    &,
+                    &:before,
+                    &:after {
+                        background-color: white;
+                        height: em(5);
+                        width: em(25);
+                        border-radius: em(10);
+                        transition: all 1s ease;
+                        transform-style: preserve-3d;
+                        -webkit-backface-visibility: hidden;
+                        perspective: 1000;
+                    }
+
+                    &:before,
+                    &:after {
+                        float: none;
+                        display: block;
+                        content: '';
+                        position: absolute;
+                        transform: translate3d(-50%, 0, 0);
+                        left: 50%;
+                        border: em(0);
+                    }
+
+                    &:before {
+                        top: -200%;
+                    }
+
+                    &:after {
+                        top: 200%;
+                    }
+                }
+            }
+        }
+    }
+    &.active {
+        .header-wrapper {
+            .header-right {
+                .toggle-nav {
+                    .hamburger {
+                        width: em(40);
+                        height: em(40);
+                        border-radius: 50%;
+                        top: 50%;
+                        left: 50%;
+                        background-color: transparent;
+                        transform: translate3d(-50%, -50%, 0);
+                        border: em(2) solid white;
+            
+                        &:before,
+                        &:after {
+                            top: 50%;
+                            left: 50%;
+                        }
+                
+                        &:before {
+                            transform: translate3d(-50%, -50%, 0) rotate(-45deg) scale(0.6, 0.7);
+                        }
+                        
+                        &:after {
+                            transform: translate3d(-50%, -50%, 0) rotate(45deg) scale(0.6, 0.7)
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
