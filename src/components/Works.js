@@ -92,7 +92,7 @@ function Works() {
               </p>
               <p className='work-tags'>#WordPress #SCSS #PHP #WooCommerce </p>
               <div className='work-buttons'>
-                <a href='https://honeyoat.bcitwebdeveloper.ca/'>Live Site</a>
+                <a href='https://jschoi.ca/honeyoat'>Live Site</a>
                 <Link to='/works/0/honey-oat'>Development</Link>
               </div>
             </div>

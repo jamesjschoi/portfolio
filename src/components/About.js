@@ -65,7 +65,7 @@ function About() {
                 </div>
                 <div className='basic-info'>
                   <p className='info-title'>Education</p>
-                  <p className='info-info'>BCIT</p>
+                  <p className='info-info'>BCIT/ Ryerson</p>
                 </div>
               </div>
             </div>

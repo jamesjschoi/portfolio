@@ -5,6 +5,10 @@
   align-items: center;
   width: 100%;
 
+  p:last-child {
+    text-align: center;
+  }
+
   @include mqs($navMobile) {
     margin-bottom: em(100);
     text-align: center;
